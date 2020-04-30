@@ -1,15 +1,29 @@
-﻿生成启动时间为 2020/4/30 16:39:52。
+﻿生成启动时间为 2020/4/30 18:35:22。
      1>项目“C:\Users\Administrator\Desktop\work_re\work\work\work.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Debug\work.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
-         所有输出均为最新。
+         e:\VS2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt log_to_excel.c main.c
+         main.c
+         log_to_excel.c
+     1>c:\users\administrator\desktop\work_re\work\work\log_to_excel.c(142): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\administrator\desktop\work_re\work\work\log_to_excel.c(171): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\administrator\desktop\work_re\work\work\log_to_excel.c(198): warning C4018: “<”: 有符号/无符号不匹配
+         正在生成代码...
+     1>c:\users\administrator\desktop\work_re\work\work\log_to_excel.c(258): warning C4715: “log_to_excel_1”: 不是所有的控件路径都返回值
        ManifestResourceCompile:
          所有输出均为最新。
        Link:
-         所有输出均为最新。
+         e:\VS2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Administrator\Desktop\work_re\work\Debug\work.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\work.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Administrator\Desktop\work_re\work\Debug\work.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Administrator\Desktop\work_re\work\Debug\work.lib" /MACHINE:X86 Debug\work.exe.embed.manifest.res
+         Debug\log_to_excel.obj
+         Debug\main.obj
+         Debug\search_dir.obj
        Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\work.exe.embed.manifest" /manifest Debug\work.exe.intermediate.manifest
          所有输出均为最新。
+       LinkEmbedManifest:
+         所有输出均为最新。
+         work.vcxproj -> C:\Users\Administrator\Desktop\work_re\work\Debug\work.exe
        FinalizeBuildStatus:
          正在删除文件“Debug\work.unsuccessfulbuild”。
          正在对“Debug\work.lastbuildstate”执行 Touch 任务。
@@ -17,4 +31,4 @@
 
 生成成功。
 
-已用时间 00:00:00.08
+已用时间 00:00:01.79
