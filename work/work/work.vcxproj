@@ -74,13 +74,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="list.c" />
     <ClCompile Include="log_to_excel.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="search_dir.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="list.h" />
     <ClInclude Include="log_to_excel.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="search_dir.h" />

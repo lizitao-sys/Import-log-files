@@ -3,8 +3,6 @@
 int num_of_img = 0;
 int getFiles_path(char* path)
 {	
-	
-	
 	char files_name[100];
 	int flag = 0;
 	
@@ -28,7 +26,6 @@ int getFiles_path(char* path)
 				strcpy( files_name, path);
 				strcat(files_name,"\\");
 				strcat(files_name,fileinfo.name);
-				//printf("files_name = %s\n",files_name);
 				getFiles_path(files_name);
 			}
 		}

@@ -69,6 +69,8 @@ void excel_3_init()
 	common = 0;
 	pl = 0;
 }
+
+
 int log_to_excel_1(char *path)
 {	
 	
@@ -86,7 +88,7 @@ int log_to_excel_1(char *path)
 	FILE *fp;
 	num = getFileSize(path);
 	stream = fopen(path,"r");
-	printf("log in \n");
+
 	if(stream == NULL)
 	{
 		perror("open fail!");
@@ -107,22 +109,22 @@ int log_to_excel_1(char *path)
 		  {		
 			
 			  cut_num++;
-			 // printf("cut_num = %d",cut_num);
+			
 			 if(cut_num == 10)
-			 {	  u = 0;
-				// printf("msg = %c",arry1[k]);
+			 {	  
+				 u = 0;			
 				memset(error_msg,0,sizeof(error_msg));
 				for(z = k+1;arry1[z] != ',' && arry1[z] != ';';z++)
 				{	
-					//printf("msg = %c",arry1[z]);
+					
 					if(arry1[z] != ' ')
 					{
 						error_msg[u] = arry1[z];
 						u++;
 					}
-					//printf("msg = %d\n",u);		
+						
 				}
-				//printf("msg =%s\n",error_msg);
+				
 				if(strstr(error_msg,"no"));
 				
 				else if(strstr(error_msg,"PL") != NULL)
@@ -132,7 +134,7 @@ int log_to_excel_1(char *path)
 					{
 						strcpy(pl_error[0],error_msg);
 						pl_flag = 1;
-						pl_time[0]++;
+		
 						pl_type++;
 					}
 					if(pl_flag == 1)
@@ -149,6 +151,8 @@ int log_to_excel_1(char *path)
 						{
 							strcpy(pl_error[pl_type],error_msg);
 							pl_type++;
+							pl_time[i]++;
+
 						}
 					}
 					
@@ -160,7 +164,6 @@ int log_to_excel_1(char *path)
 					{
 						strcpy(android_error[0],error_msg);
 						android_flag = 1;
-						android_time[0]++;
 						android_type++;
 					}
 					if(android_flag == 1)
@@ -177,6 +180,7 @@ int log_to_excel_1(char *path)
 						{
 							strcpy(android_error[android_type],error_msg);
 							android_type++;
+							android_time[i]++;
 						}
 					}
 				}
@@ -188,7 +192,6 @@ int log_to_excel_1(char *path)
 						strcpy(common_error[0],error_msg);
 						common_flag = 1;
 						common_type++;
-						common_time[0]++;
 					}
 					if(common_flag == 1)
 					{
@@ -198,7 +201,6 @@ int log_to_excel_1(char *path)
 							{	
 								
 								common_time[i]++;
-								//printf("cownwi = %d",common_time[i]);
 								break;
 							}
 						}
@@ -206,6 +208,7 @@ int log_to_excel_1(char *path)
 						{
 							strcpy(common_error[common_type],error_msg);
 							common_type++;
+							common_time[i]++;
 						}
 					}
 				}
@@ -223,7 +226,6 @@ int log_to_excel_1(char *path)
 			if(arry1[k+1] != '\0')
 			{
 				bin_num = strstr(&arry1[k],"BIN");
-			//	printf("bin_num = %c\n",bin_num[3]);
 				if(bin_num[3] == '1')
 				{
 					bin1++;
@@ -313,7 +315,6 @@ void log_to_excel_2()
 	bin2_ratio = (double)bin2/(double)(bin2+bin1+bin3+bin4);
 	bin3_ratio = (double)bin3/(double)(bin2+bin1+bin3+bin4);
 	bin4_ratio = (double)bin4/(double)(bin2+bin1+bin3+bin4);
-	//printf("bin1 = %lf",bin1_ratio);
 	int_to_char(bin1_ratio);
 	int_to_char(bin2_ratio);
 	int_to_char(bin3_ratio);
@@ -358,7 +359,6 @@ void log3(FILE *fp,int mode,int type,int  *time,char (*type_error)[50])
 	for(i = 0;i < type;i++)
 	{	
 		memset(a,0,sizeof(a));
-		//ratio = (double)common_time[i]/(double)sum;
 		gcvt((double)time[i]/(double)sum,3,a);	
 		fprintf(fp,a);
 		fprintf(fp,"\t");
@@ -367,9 +367,6 @@ void log3(FILE *fp,int mode,int type,int  *time,char (*type_error)[50])
 void log_to_excel_3()
 {	
 	FILE *fp;
-	/*int i;
-	int sum = 0;
-	double ratio;*/
 	char a[10] = {0};
 	fp = fopen("C:\\Users\\Administrator\\Desktop\\3.xls","a+");
 	fprintf(fp,"\t");
